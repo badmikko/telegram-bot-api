@@ -44,9 +44,9 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/386,linux/amd64
+          platforms: linux/386,linux/amd64,linux/amd64,linux/arm
           push: true
           tags: |
-            aiogram/telegram-bot-api:latest
-            aiogram/telegram-bot-api:${{ env.TG_SERVER_VERSION }}
-          #  aiogram/telegram-bot-api:${{ steps.current-time.outputs.formattedTime }}
+            ${{ secrets.DOCKERHUB_LOGIN }}/telegram-bot-api:latest
+            ${{ secrets.DOCKERHUB_LOGIN }}/telegram-bot-api:${{ env.TG_SERVER_VERSION }}
+          #  ${{ secrets.DOCKERHUB_LOGIN }}/telegram-bot-api:${{ steps.current-time.outputs.formattedTime }}
