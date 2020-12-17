@@ -44,7 +44,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/386,linux/amd64,linux/amd64,linux/arm
+          platforms: linux/amd64,linux/amd64,linux/arm/v7
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_LOGIN }}/telegram-bot-api:latest
